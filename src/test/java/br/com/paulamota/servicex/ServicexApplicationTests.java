@@ -1,4 +1,4 @@
-package br.com.ingrid.servicex;
+package br.com.paulamota.servicex;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

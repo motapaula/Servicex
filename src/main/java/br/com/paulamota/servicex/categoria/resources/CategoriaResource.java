@@ -1,7 +1,7 @@
-package br.com.ingrid.servicex.categoria.resorces;
+package br.com.paulamota.servicex.categoria.resources;
 
-import br.com.ingrid.servicex.categoria.domain.Categoria;
-import br.com.ingrid.servicex.categoria.service.CategoriaService;
+import br.com.paulamota.servicex.categoria.domain.Categoria;
+import br.com.paulamota.servicex.categoria.service.CategoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

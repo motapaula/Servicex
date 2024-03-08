@@ -1,8 +1,11 @@
-package br.com.ingrid.servicex.servico.domain;
+package br.com.paulamota.servicex.servico.domain;
 
-import br.com.ingrid.servicex.categoria.domain.Categoria;
+import br.com.paulamota.servicex.categoria.domain.Categoria;
+import br.com.paulamota.servicex.ordemservico.domain.OrdemServico;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Data
 @Entity
@@ -17,14 +20,17 @@ public class Servicos {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column (name = "ID_SERVICOS")
     private Integer idServicos;
-    @Column (name = "ID_SERVICOS")
-    private String nomeServico;
     @Column (name = "NOME_SERVICOS")
+    private String nomeServico;
+    @Column (name = "VALOR_SERVICOS")
     private Double valor;
     @ManyToOne
     @JoinColumn (name = "idCategoria")
-    @Column (name = "VALOR_SERVICOS")
+    @Column (name = "CATEGORIA_SERVICOS")
     private Categoria categoria;
+    @Column(name = "ORDEM_SERVICO")
+    @OneToMany(mappedBy = "servico")
+    private List<OrdemServico> ordemServicos;
 
 
 

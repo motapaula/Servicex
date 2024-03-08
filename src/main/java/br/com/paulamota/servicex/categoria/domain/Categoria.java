@@ -1,6 +1,6 @@
-package br.com.ingrid.servicex.categoria.domain;
+package br.com.paulamota.servicex.categoria.domain;
 
-import br.com.ingrid.servicex.servico.domain.Servicos;
+import br.com.paulamota.servicex.servico.domain.Servicos;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -16,6 +16,7 @@ public class Categoria {
     private Integer idCategoria;
     @Column(name = "NOME_CATEGORIA")
     private String nomeCategoria;
+    @Column(name = "SERVICOS")
     @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
     private List<Servicos> servicos;
 

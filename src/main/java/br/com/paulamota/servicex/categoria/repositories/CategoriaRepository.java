@@ -1,6 +1,6 @@
-package br.com.ingrid.servicex.categoria.repositores;
+package br.com.paulamota.servicex.categoria.repositories;
 
-import br.com.ingrid.servicex.categoria.domain.Categoria;
+import br.com.paulamota.servicex.categoria.domain.Categoria;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

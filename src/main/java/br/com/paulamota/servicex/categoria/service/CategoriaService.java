@@ -1,7 +1,7 @@
-package br.com.ingrid.servicex.categoria.service;
+package br.com.paulamota.servicex.categoria.service;
 
-import br.com.ingrid.servicex.categoria.domain.Categoria;
-import br.com.ingrid.servicex.categoria.repositores.CategoriaRepository;
+import br.com.paulamota.servicex.categoria.domain.Categoria;
+import br.com.paulamota.servicex.categoria.repositories.CategoriaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

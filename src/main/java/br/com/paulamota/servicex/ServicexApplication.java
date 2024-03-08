@@ -1,4 +1,4 @@
-package br.com.ingrid.servicex;
+package br.com.paulamota.servicex;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
