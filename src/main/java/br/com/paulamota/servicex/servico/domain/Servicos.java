@@ -7,7 +7,7 @@ import lombok.*;
 
 import java.util.List;
 
-@Data
+
 @Entity
 @Table (name = "SERVICOS")
 @Getter
@@ -26,11 +26,8 @@ public class Servicos {
     private Double valor;
     @ManyToOne
     @JoinColumn (name = "idCategoria")
-    @Column (name = "CATEGORIA_SERVICOS")
     private Categoria categoria;
-    @Column(name = "ORDEM_SERVICO")
-    @OneToMany(mappedBy = "servico")
-    private List<OrdemServico> ordemServicos;
+
 
 
 

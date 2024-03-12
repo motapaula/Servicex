@@ -1,4 +1,4 @@
-package br.com.paulamota.servicex.categoria.service;
+package br.com.paulamota.servicex.categoria.services;
 
 import br.com.paulamota.servicex.categoria.domain.Categoria;
 import br.com.paulamota.servicex.categoria.repositories.CategoriaRepository;
