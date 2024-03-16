@@ -21,8 +21,6 @@ public class CategoriaResource {
 
         Categoria novaCategoria = categoriaService.criarCategoria(categoria);
         return new ResponseEntity<>(novaCategoria, HttpStatus.CREATED);
-
-
     }
 
     @GetMapping
@@ -32,7 +30,7 @@ public class CategoriaResource {
     }
 
     @GetMapping("/{idCategoria}")
-    public ResponseEntity<Categoria> buscarCategoria(@PathVariable Integer idCategoria) {
+    public ResponseEntity buscarCategoria(@PathVariable Integer idCategoria) {
         return categoriaService.buscarCategoria(idCategoria)
                 .map(categoria -> new ResponseEntity(categoria, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
@@ -42,6 +40,16 @@ public class CategoriaResource {
     public ResponseEntity<Void> deletarCategoria(@PathVariable Integer idCategoria){
         categoriaService.deletarCategoria(idCategoria);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @PutMapping("/{idCategoria}")
+    public ResponseEntity<Categoria> atualizarCategoria(@PathVariable Integer idCategoria, @RequestBody Categoria categoria){
+        if(!categoriaService.buscarCategoria(idCategoria).isPresent()){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        categoria.setIdCategoria(idCategoria);
+        Categoria novaCategoria = categoriaService.atualizarCategoria(categoria);
+        return new ResponseEntity<>(novaCategoria, HttpStatus.OK);
     }
 
 

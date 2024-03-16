@@ -2,11 +2,14 @@ package br.com.paulamota.servicex.categoria.domain;
 
 import br.com.paulamota.servicex.servico.domain.Servicos;
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.util.List;
 
 @Data
+@Getter
+@Setter
+@AllArgsConstructor
 @Entity
 @Table (name = "CATEGORIA")
 public class Categoria {
