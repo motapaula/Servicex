@@ -10,6 +10,7 @@ import java.util.List;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table (name = "SERVICOS")
 
@@ -22,10 +23,12 @@ public class Servico {
     private String nomeServico;
     @Column(name = "VALOR_SERVICO")
     private Double valorServico;
-    @Column(name = "CATEGORIA")
-    @OneToMany(mappedBy = "servico", cascade = CascadeType.ALL)
+    @ManyToOne
+    @JoinColumn(name = "ID_CATEGORIA")
     private List<Categoria> categorias;
 
-    public Servico() {
-    }
+
+
+
+
 }
