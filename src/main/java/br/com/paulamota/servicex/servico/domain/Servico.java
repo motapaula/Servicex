@@ -25,10 +25,6 @@ public class Servico {
     private Double valorServico;
     @ManyToOne
     @JoinColumn(name = "ID_CATEGORIA")
-    private List<Categoria> categorias;
-
-
-
-
+    private Categoria categoria;
 
 }
