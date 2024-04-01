@@ -1,6 +1,6 @@
 package br.com.paulamota.servicex.pagamento.domain;
 
-import br.com.paulamota.servicex.ordemservico.domain.OrdemServico;
+//import br.com.paulamota.servicex.ordemservico.domain.OrdemServico;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import jakarta.persistence.Column;
@@ -25,8 +25,8 @@ public class PagamentoBoleto extends Pagamento {
     @JsonFormat(pattern = "dd/MM/yyyy")
     private Date dataPagamento;
 
-    public PagamentoBoleto(Integer idPagamento, StatusPagamento statusPagamento, OrdemServico ordemServico, Date dataVencimento, Date dataPagamento) {
-        super(idPagamento, statusPagamento, ordemServico);
+    public PagamentoBoleto(Integer idPagamento, StatusPagamento statusPagamento /*OrdemServico ordemServico*/, Date dataVencimento, Date dataPagamento) {
+        super(idPagamento, statusPagamento /* ordemServico */);
         this.dataVencimento = dataVencimento;
         this.dataPagamento = dataPagamento;
     }

@@ -1,6 +1,6 @@
 package br.com.paulamota.servicex.pagamento.domain;
 
-import br.com.paulamota.servicex.ordemservico.domain.OrdemServico;
+//import br.com.paulamota.servicex.ordemservico.domain.OrdemServico;
 import jakarta.persistence.*;
 
 import java.util.Objects;
@@ -12,15 +12,15 @@ public abstract class Pagamento {
     private Integer idPagamento;
     @Column(name = "STATUS_PAGAMENTO")
     private Integer statusPagamento;
-    @OneToOne
-    @JoinColumn(name = "ID_OS")
-    @MapsId
-    private OrdemServico ordemServico;
+//    @OneToOne
+//    @JoinColumn(name = "ID_OS")
+//    @MapsId
+//    private OrdemServico ordemServico;
 
-    public Pagamento(Integer idPagamento, StatusPagamento statusPagamento, OrdemServico ordemServico) {
+    public Pagamento(Integer idPagamento, StatusPagamento statusPagamento /*OrdemServico ordemServico*/) {
         this.idPagamento = idPagamento;
         this.statusPagamento = (statusPagamento == null) ? null : statusPagamento.getCod();
-        this.ordemServico = ordemServico;
+        /* this.ordemServico = ordemServico; */
     }
 
     public Pagamento() {
@@ -43,24 +43,24 @@ public abstract class Pagamento {
         this.statusPagamento = statusPagamento.getCod();
     }
 
-    public OrdemServico getOrdemServico() {
-        return ordemServico;
-    }
-
-    public void setOrdemServico(OrdemServico ordemServico) {
-        this.ordemServico = ordemServico;
-    }
+//    public OrdemServico getOrdemServico() {
+//        return ordemServico;
+//    }
+//
+//    public void setOrdemServico(OrdemServico ordemServico) {
+//        this.ordemServico = ordemServico;
+//    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Pagamento pagamento = (Pagamento) o;
-        return Objects.equals(idPagamento, pagamento.idPagamento) && Objects.equals(statusPagamento, pagamento.statusPagamento) && Objects.equals(ordemServico, pagamento.ordemServico);
+        return Objects.equals(idPagamento, pagamento.idPagamento) && Objects.equals(statusPagamento, pagamento.statusPagamento) /*&& Objects.equals(ordemServico, pagamento.ordemServico)*/;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idPagamento, statusPagamento, ordemServico);
+        return Objects.hash(idPagamento, statusPagamento /*ordemServico*/);
     }
 }

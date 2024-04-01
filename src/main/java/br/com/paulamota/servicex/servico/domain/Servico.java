@@ -1,7 +1,7 @@
 package br.com.paulamota.servicex.servico.domain;
 
 import br.com.paulamota.servicex.categoria.domain.Categoria;
-import br.com.paulamota.servicex.ordemservico.domain.OrdemServico;
+//import br.com.paulamota.servicex.ordemservico.domain.OrdemServico;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -29,8 +29,8 @@ public class Servico {
     @ManyToOne
     @JoinColumn(name = "ID_CATEGORIA")
     private Categoria categoria;
-    @JsonIgnore
-    @ManyToMany(mappedBy = "servicos")
-    private List<OrdemServico> ordemServicos;
+//    @JsonIgnore
+//    @ManyToMany(mappedBy = "servicos")
+//    private List<OrdemServico> ordemServicos;
 
 }
