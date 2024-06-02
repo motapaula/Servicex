@@ -4,6 +4,7 @@ import br.com.paulamota.servicex.servico.domain.Servico;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.validator.constraints.Length;
 
 import java.util.List;
 
@@ -28,4 +29,9 @@ public class Categoria {
 
     public Categoria() {
     }
+    public Categoria(Integer idCategoria, String nomeCategoria) {
+        this.idCategoria = idCategoria;
+        this.nomeCategoria = nomeCategoria;
+    }
+
 }
